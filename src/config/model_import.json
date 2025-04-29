@@ -1,0 +1,44 @@
+{
+    "inout": {
+        "save_config": true,
+        "name": "model_import",
+        "verbosity": 1,
+        "force_download": false,
+        "trust_remote_code": true
+    },
+    "system": {
+        "seed": 42,
+        "dtype": "torch.float32",
+        "device": "cuda"
+    },
+    "dataset": {
+        "size": 0.01,
+        "dataset": "LongBench",
+        "dataset_options": {
+            "languages": [
+                "code"
+            ]
+        }
+    },
+    "model": {
+        "patch_pattern": "all"
+    },
+    "sketching": {
+        "sketchers": [
+            {
+                "type": "PyTorch",
+                "variant": "max",
+                "sample_proportion": 0.5
+            }
+        ]
+    },
+    "eval": {
+        "metrics": [
+            "cross_entropy_loss",
+            "perplexity"
+        ],
+        "time_metrics": [
+            "total"
+        ]
+    }
+}

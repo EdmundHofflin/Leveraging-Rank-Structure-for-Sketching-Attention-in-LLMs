@@ -1,0 +1,51 @@
+name: sketched_attention
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python
+  
+  - ipython
+  - notebook
+  - ipywidgets
+  - nbconvert
+  - nbformat
+
+  - numpy
+  - pandas
+  - xarray
+  - scikit-learn
+  - keras
+
+  - typing
+  - jsonargparse
+
+  - python-kaleido
+  - matplotlib
+  - seaborn
+  - plotly
+  - tqdm
+
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.4
+
+  - tensorflow
+  - tensorflow-datasets
+  - tensorboard
+
+  - transformers
+  - datasets
+  - accelerate
+  - sentencepiece
+  - brotli
+  - brotli-bin
+
+  - cudatoolkit
+  
+  - pip
+  - pip:
+    - evaluate

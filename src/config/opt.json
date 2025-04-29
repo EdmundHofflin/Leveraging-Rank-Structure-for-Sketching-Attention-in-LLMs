@@ -1,0 +1,212 @@
+{
+    "inout": {
+        "save_config": true,
+        "name": "opt",
+        "verbosity": 1,
+        "force_download": false,
+        "trust_remote_code": true
+    },
+    "system": {
+        "dtype": "torch.float32",
+        "device": "cuda"
+    },
+    "dataset": {
+        "size": 1.0,
+        "dataset": "LongBench",
+        "dataset_options": {
+            "languages": [
+                "en"
+            ]
+        }
+    },
+    "model": {
+        "model_name": "facebook/opt-350M",
+        "patch_pattern": "all"
+    },
+    "sketching": {
+        "sketchers": [
+            {
+                "variant": "standard"
+            },
+            {
+                "variant": "random",
+                "sample_proportion": 0.001
+            },
+            {
+                "variant": "random",
+                "sample_proportion": 0.01
+            },
+            {
+                "variant": "random",
+                "sample_proportion": 0.1
+            },
+            {
+                "variant": "random",
+                "sample_proportion": 0.2
+            },
+            {
+                "variant": "random",
+                "sample_proportion": 0.3
+            },
+            {
+                "variant": "random",
+                "sample_proportion": 0.4
+            },
+            {
+                "variant": "random",
+                "sample_proportion": 0.5
+            },
+            {
+                "variant": "random",
+                "sample_proportion": 0.6
+            },
+            {
+                "variant": "random",
+                "sample_proportion": 0.7
+            },
+            {
+                "variant": "random",
+                "sample_proportion": 0.8
+            },
+            {
+                "variant": "random",
+                "sample_proportion": 0.9
+            },
+
+            {
+                "variant": "importance",
+                "sample_proportion": 0.001,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "importance",
+                "sample_proportion": 0.01,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "importance",
+                "sample_proportion": 0.1,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "importance",
+                "sample_proportion": 0.2,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "importance",
+                "sample_proportion": 0.3,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "importance",
+                "sample_proportion": 0.4,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "importance",
+                "sample_proportion": 0.5,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "importance",
+                "sample_proportion": 0.6,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "importance",
+                "sample_proportion": 0.7,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "importance",
+                "sample_proportion": 0.8,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "importance",
+                "sample_proportion": 0.9,
+                "leverage_equation": "L"
+            },
+
+            {
+                "variant": "max",
+                "sample_proportion": 0.001,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "max",
+                "sample_proportion": 0.01,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "max",
+                "sample_proportion": 0.1,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "max",
+                "sample_proportion": 0.2,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "max",
+                "sample_proportion": 0.3,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "max",
+                "sample_proportion": 0.4,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "max",
+                "sample_proportion": 0.5,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "max",
+                "sample_proportion": 0.6,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "max",
+                "sample_proportion": 0.7,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "max",
+                "sample_proportion": 0.8,
+                "leverage_equation": "L"
+            },
+            {
+                "variant": "max",
+                "sample_proportion": 0.9,
+                "leverage_equation": "L"
+            }
+        ]
+    },
+    "eval": {
+        "metrics": [
+            "cross_entropy_loss",
+            "perplexity"
+        ],
+        "runs": 1,
+        "time_metrics": [
+            "total"
+        ],
+        "internal_metrics": [
+            "sketching_info"
+        ],
+        "batch_size": [
+            128,
+            64,
+            32,
+            16,
+            8,
+            4,
+            2,
+            1
+        ]
+    }
+}

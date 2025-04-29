@@ -1,0 +1,54 @@
+{
+    "inout": {
+        "save_config": true,
+        "name": "opt_rank",
+        "verbosity": 1,
+        "force_download": false,
+        "trust_remote_code": true
+    },
+    "system": {
+        "dtype": "torch.float32",
+        "device": "cuda"
+    },
+    "dataset": {
+        "size": 0.1,
+        "dataset": "LongBench",
+        "dataset_options": {
+            "languages": [
+                "en"
+            ]
+        }
+    },
+    "model": {
+        "model_name": "facebook/opt-350M",
+        "patch_pattern": "all"
+    },
+    "sketching": {
+        "sketchers": [
+            {
+                "variant": "standard"
+            }
+        ]
+    },
+    "eval": {
+        "metrics": [
+            "cross_entropy_loss",
+            "perplexity"
+        ],
+        "runs": 1,
+        "time_metrics": [
+            "total"
+        ],
+        "internal_metrics": [
+            "sketching_info"
+        ],
+        "batch_size": [
+            32,
+            16,
+            8,
+            4,
+            2,
+            1
+        ]
+    }
+}
